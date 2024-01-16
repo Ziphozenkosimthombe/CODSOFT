@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;600;700&display=swap');
+/* =======for the mobile =======*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.6;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+    border-radius: 50%;
+}
+
+h1,
+h3,
+h2,
+p{
+    margin:0;
+}
+/* =======for the mobile =======*/
+
+
+/* ======featured======= */
+section{
+    padding: 7em 0;
+}
+.spacing > * + *{
+    margin-top: var(--spacer, 2rem);
+}
+.container{
+    width:85%;
+    max-width: 65em;
+    margin: 0 auto;
+}
+
+.split{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &>*{
+        flex-basis: 30%;
+        min-width: 15em;
+    }
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: .5em 1.25em;
+    background: var(--clr-accent, blue);
+    color: var(--clr-text, white);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    border-radius: .25em;
+    transition: 
+        transform 250ms ease-in-out,
+        opacity 175ms linear;
+}
+
+.btn:hover,
+.btn:focus{
+    transform: scale(1.1);
+    opacity: .9;
+}
+
+.main__title{
+    font-size: 4rem;
+    font-size: clampl(3rem, calc(5vw + 1rem), 4.5rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.section__title{
+    text-align: center;
+    font-size: clamp(2.5rem, calc(5vw + 1rem), 4.5rem);
+    line-height: 1.1;
+    color: #17353d;
+    margin-bottom: 5rem;
+}
+
+.hero{
+    color: white;
+    text-align: center;
+    padding:  15em 0;
+    background: #938f8f;
+
+    @supports (background-blend-mode: multiply){
+    
+        background-image: url(./img/t-shirt3.png),
+                radial-gradient(#444, #111);
+        background-blend-mode: multiply;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    
+}
+
+.featured{
+    background: #eee;
+    
+}
+
+.featured__item{
+    display: block;
+    position: relative;
+    transform: scale(.85);
+    transition: transform 250ms ease-in-out;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    line-height: 1.2;
+}
+span{
+    display: block;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+.featured__item:hover,
+.featured__item:focus{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.featured__item:hover .featured__details,
+.featured__item:focus .featured__details{
+    
+    opacity: 1;
+}
+.featured__item::after{
+    content: '';
+    top: 0;
+    left:0;
+    position: absolute;
+    padding: 100% 100% 0 0;
+    background: red;
+    border-radius: 20%;
+    z-index: -1;
+
+}
+
+.featured__details{
+    opacity: 0;
+    transition: opecity 250ms linear;
+}
+
+
+/* ======products===== */
+.product{
+    background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+    padding: 3em 0;
+    border-radius: 1em;
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+.product img{
+    margin: 0 auto;
+}
+
+.product__title{
+    font-size: 4rem;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 0 0 .2em rgba(#000, .2);
+}
+
+.shoe__red{
+    --clr-inner: red;
+    --clr-outer: orange;
+    --clr-accent: limegreen;
+}
+
+.shoe__blue{
+    --clr-inner: blue;
+    --clr-outer: orange;
+    --clr-accent: rgb(19, 170, 160);
+}
+
+.shoe__white{
+    --clr-inner: #fce4b3;
+    --clr-outer: #eac886;
+    --clr-accent: #2f4858;
+}
+
