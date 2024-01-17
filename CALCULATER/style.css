@@ -1,0 +1,73 @@
+*,
+::before,
+::after{
+    
+    box-sizing: border-box;
+}
+:root{
+    --clr-screen-bg: yellowgreen;
+    --clr-color-text: #fff;
+    --clr-color-bg-p: peru;
+    --clr-color-clear: limegreen;
+    --clr-color-delete: red;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+
+
+}
+
+.screen{
+    width: 14.375rem;
+    height: 6.25rem;
+    background-color: blue;
+    color: var(--clr-color-text);
+    text-align: end;
+    font-size: 2.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+
+}
+
+.calculator{
+    background-color: var(--clr-screen-bg);
+    padding: 1.25rem;
+    border-radius: 1.563rem;
+}
+
+.button{
+    display: flex;
+    flex-wrap: wrap;
+    width: 14.688rem;
+}
+
+button{
+    font-size: 2.5rem;
+    color: var(--clr-screen-bg);
+    width:3.125rem;
+    height: 3.125rem;
+    margin: 0.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+button:hover{
+    background: var(--clr-color-bg-p);
+}
+
+.clear,
+.delete{
+    border-radius: 1.25rem;
+    width: 40%;
+    font-size: 1.875rem;
+    background-color: var(--clr-color-clear);
+}
+
+.delete{
+    background: var(--clr-color-delete);
+}
