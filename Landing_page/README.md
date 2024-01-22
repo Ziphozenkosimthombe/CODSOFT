@@ -28,6 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [link](https://github.com/Ziphozenkosimthombe/CODSOFT.git)
+- live link: [link](https://charming-pasca-39dcf4.netlify.app)
 
 ## My process
 
