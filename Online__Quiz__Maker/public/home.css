@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+    --clr-gb-h1-1: rgba(238, 14, 210, 0.9);
+    --clr-gb-h1-2: rgba(14, 238, 224, 0.9);
+    --clr-gb-h1-3: rgba(238, 47, 14, 0.29);
+    --clr-gb-h1-4: rgba(233, 238, 14, 0.9);
+    --clr-gb-h1-5: rgba(209, 214, 20, 0);
+    --clr-gb-h1-6: rgba(214, 20, 28, 0.59);
+    --color-bg: rgba(203, 212, 74, 0.42);
+    --color-bg-2: rgba(212, 74, 212, 0.42);
+    --color-link-a-1: rgba(180, 111, 15, 0.776);
+    --color-link-a-2: rgba(106, 17, 80, 0.746);
+    --color-link-a-3: rgba(51, 115, 142, 0.641);
+    --color-link-a-4: rgba(140, 136, 56, 0.566);
+    --color-link-a-5: rgb(226, 117, 117);
+    --color-link-a-6: rgba(201, 147, 126, 0.627);
+    --color-link-a-7:rgba(3, 19, 51, 0.628);
+    --colo-link-a: rgba(131, 122, 74, 0.42);
+    --color-btn-hvr: rgba(14, 61, 238, 0.42);
+    --color-btn-hvr-2: rgba(238, 14, 14, 0.42);
+    --color-btn-text: rgb(0,0,0);
+}
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700; 
+    font-family: 'Oswald', sans-serif; 
+    background: linear-gradient(to right, var(--clr-gb-h1-1) 0%, var(--clr-gb-h1-2) 20%, var(--clr-gb-h1-3) 61%),
+                linear-gradient(var(--clr-gb-h1-4) 52%, var(--clr-gb-h1-5) 60%, var(--clr-gb-h1-6) 61%); 
+    background-clip: text; /*it defines how far the background should extend within an element, here we set it to text */
+    -webkit-background-clip: text; /*for browsers compatibility */
+    -webkit-text-fill-color: transparent; /* specifies the fill color of text characters. We use transparent to use the background as our text fill  */
+    animation: wave 2000ms ease alternate infinite;
+    transition: all 0.4s ease;
+}
+
+@keyframes wave {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 50vw 10px;
+    }
+  }
+
+body{
+    margin-top: 2rem;
+    background: radial-gradient(var(--color-bg-2), var(--color-bg));
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* height: 100vh; */
+    
+}
+
+div{
+    display: flex;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+a{
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-decoration: none;
+    background-image: linear-gradient(to right, var(--color-link-a-1), var(--color-link-a-2), var(--color-link-a-3), var(--color-link-a-4), var(--color-link-a-5), var(--color-link-a-6), var(--color-link-a-7));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+a:hover{
+    
+    color: var(--color-btn-text);
+}
+
+button{
+    
+    background: radial-gradient(var(--color-link-a-2), var(--color-link-a));
+    color: var(--colo-link-a);
+    padding: .5rem 1.25rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+button:hover,
+button:focus{
+    background: radial-gradient(var(--color-btn-hvr), var(--color-btn-hvr-2));
+    color: var(--color-btn-text);
+    transform: scale(1.1);
+}
+
