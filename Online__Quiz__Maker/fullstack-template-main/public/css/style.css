@@ -30,7 +30,7 @@
     --color-btn-text: rgb(0,0,0);
 }
 
-h1{
+.home__page__h1{
     font-size: 3rem;
     text-align: center;
     font-weight: 700; 
@@ -79,10 +79,12 @@ a{
     -moz-background-clip: text;
     background-clip: text;
     color: transparent;
+    cursor: pointer;
 }
 a:hover{
     
     color: var(--color-btn-text);
+    
 }
 
 button{
@@ -104,4 +106,17 @@ button:focus{
     color: var(--color-btn-text);
     transform: scale(1.1);
 }
+
+/* .h1__div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    gap: 20rem;
+} */
+
+/* .home__page__a,
+.logout{
+
+} */
 
