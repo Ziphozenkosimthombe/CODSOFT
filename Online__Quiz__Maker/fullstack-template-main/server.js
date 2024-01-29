@@ -12,6 +12,8 @@ const mainRoutes = require("./routes/main");
 // const postRoutes = require("./routes/posts");
 const homeRoutes = require("./routes/home");
 const createRoutes = require("./routes/create");
+const takeRoutes = require("./routes/take");
+
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -60,7 +62,9 @@ app.use("/", mainRoutes);
 // app.use("/post", postRoutes);
 app.use("/home", homeRoutes)
 app.use("/createQ", createRoutes)
+app.use("/takeQ", takeRoutes)
 app.use("/api", homeRoutes)
+
 
 
 //Server Running

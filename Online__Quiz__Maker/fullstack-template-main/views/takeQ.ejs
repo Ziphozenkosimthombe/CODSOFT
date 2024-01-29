@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+
+<!-- Main content -->
+<main>
+    <h1><%= quiz.title %></h1>
+
+    <!-- Start of form -->
+    <form action="/submitQuiz/<%= quiz._id %>" method="post">
+        <!-- Loop through each question in the quiz -->
+        <% quiz.questions.forEach(function(question) { %>
+            <div class="question">
+                <h2><%= question.text %></h2>
+
+                <!-- Loop through each option in the question -->
+                <% question.options.forEach(function(option) { %>
+                    <div class="option">
+                        <input type="radio" name="<%= question._id %>" value="<%= option._id %>">
+                        <label><%= option.text %></label>
+                    </div>
+                <% }) %>
+            </div>
+        <% }) %>
+
+        <!-- Submit button to submit answers -->
+        <button type="submit">Submit Answers</button>
+    </form>
+    <!-- End of form -->
+</main>
+
+<%- include('partials/footer') -%>

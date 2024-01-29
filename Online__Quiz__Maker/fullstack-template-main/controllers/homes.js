@@ -39,5 +39,31 @@ module.exports = {
             console.log(err);
             res.redirect("/create ");
         }
+    },
+    takeQuiz: async (req, res) => {
+        try {
+            const quiz = await Quiz.findById(req.params.id);
+            if (!quiz) {
+                console.error("Quiz not found");
+                return res.redirect('/');
+            }
+            res.render('takeQ.ejs', { quiz: quiz, user: req.user });
+        } catch (err) {
+            console.error(err);
+            res.redirect('/');
+        }
+    },
+    submitQuiz: async (req, res) =>{
+        try{
+            const quiz = await Quiz.findById(req.params.id).populate('questions.options');
+            // req.body will contain the submitted answers
+            // You'll need to implement the logic to check the answers
+            // and calculate the score
+            const score = calculateScore(quiz, req.body);
+            res.render('result', { score: score });
+        } catch (err){
+            console.error(err);
+            res.redirect('/take')
+        }
     }
 }
