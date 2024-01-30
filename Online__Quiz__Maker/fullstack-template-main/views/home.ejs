@@ -1,16 +1,21 @@
 <%- include('partials/header') -%>
-
-<h1 class="home__page__h1">Welcome to the quiz application website of your choice</h1>
-<a href="/logout" class="logout" >Logout</a>
-
+<div class="d-flex justify-content-between">
+    <p class="text-uppercase mx-4"><strong>User Name</strong>: <%= user.userName %></p>
+    <p class="text-uppercase"><a href="/home" class="home__a">Quiz App</a></p>
+    <p class="text-uppercase mx-4"><a href="/logout" class="logout">Logout</a></p>
+</div>
+<main>
+    <h1 class="home__page__h1">Welcome to the quiz application website of your choice</h1>
     <div>
         <button>
             <a href="./createQ">Create Quiz</a>
         </button>
         <button>
-            <a href="/takeQ">Take Quiz</a>
+            <a href="./takeQ">Take Quiz</a>
         </button>
     </div>
+
+</main>
 
 
 <%- include('partials/footer') -%>

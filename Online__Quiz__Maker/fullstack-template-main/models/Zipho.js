@@ -14,9 +14,22 @@ const questionSchema = new mongoose.Schema({
   },
 });
 
+const scoreSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  value: Number
+});
+
 const quizSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  questions: [questionSchema]
+  questions: [questionSchema],
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  scores: [scoreSchema]
 });
 const Quiz = mongoose.model('Quiz', quizSchema);
 module.exports = Quiz;
